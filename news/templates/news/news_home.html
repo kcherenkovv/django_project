@@ -1,0 +1,22 @@
+{% extends 'firstapp/layout.html' %}
+
+{% block titel %}Заметки{% endblock %}
+
+
+{% block content %}
+   <div class="features">
+             <h1>Заметки</h1>
+             {% if news  %}
+            {% for el in news %}
+              <div class="alert alert-warning">
+                <h3> {{ el.title }} </h3>
+                <p> {{ el.description }} </p>
+              </div>
+            {% endfor %}
+        {% else %}
+          <p>У вас нет заметок</p>
+          {% endif %}
+   </div>
+   
+
+{% endblock %}
